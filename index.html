@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Normal Plot</title>
+    <meta name="description" content="">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <style type="text/css">
+    body {
+        font: 10px sans-serif;
+    }
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+    /*.x.axis path {
+        display: none;
+    }*/
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1.5px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div>
+       <input class="inputStdDeviation" type="number" "value"=12>
+       <button class="buttonStdDeviation">STD</button>
+       <input class="inputVariance" type="number">
+       <button class="buttonVariance">Variance</button>
+       <input class="inputMean" type="number">
+       <button class="buttonMean">Mean</button>
+    </div>
+
+
+</body>
+<script src="dataGenerator.js"></script>
+<script src="graphGenerator.js"></script>
+<script src="controller.js"></script>
+
+
+
+</html>
