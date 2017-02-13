@@ -21,7 +21,10 @@ function draw(){
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
 
-  var x = d3.scale.linear()
+  // var x = d3.scale.linear()
+  //     .range([0, width]);
+
+  var x = d3.time.scale()
       .range([0, width]);
 
   var y = d3.scale.linear()
