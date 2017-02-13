@@ -1,8 +1,6 @@
 var data = [];
 var yAxisHeight = 1;
 
-
-
 function pdf(x, variance, mean) {
   var m = Math.sqrt(variance) * Math.sqrt(2 * Math.PI);
   var e = Math.exp(-Math.pow(x - mean, 2) / (2 * variance));
@@ -23,15 +21,26 @@ function generateData(mean, variance) {
   var step =  0.1;
   var x = start;
   var y;
+  var day;
 
   for (x; x <= end; x = x + step) {
-    y = pdf(x, variance, mean);    el = {
+    y = pdf(x, variance, mean);
+    day = getDates(x)
+
+    el = {
+      "day": day,
       "q": x,
       "p": y
     }
     data.push(el);
     getyAxisHeight(data)
   }
+}
+
+function getDates(x) {
+  var oneDay = 86400000;
+  var ms = new Date().getTime() + oneDay * x;
+  return new Date(ms);
 }
 
 
@@ -59,5 +68,4 @@ function getyAxisHeight(data){
   else{
     yAxisHeight = 0.3;
   }
-  console.log(yAxisHeight);
 }

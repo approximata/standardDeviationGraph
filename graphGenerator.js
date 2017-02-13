@@ -37,7 +37,7 @@ function draw(){
 
   var line = d3.svg.line()
       .x(function(d) {
-          return x(d.q);
+          return x(d.day);
       })
       .y(function(d) {
           return y(d.p);
@@ -50,7 +50,7 @@ function draw(){
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   x.domain(d3.extent(data, function(d) {
-      return d.q;
+      return d.day;
   }));
   y.domain([0, yAxisHeight]);
 
